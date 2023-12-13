@@ -3,10 +3,28 @@
   <head>
   {# Encodage des caractères prevu pour le web #}
     <meta charset="utf-8">
+
     {# Minimum de responsive design à toujours mettre en place #}
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {# Le titre affiche dans l'onglet #}
-    <title>Bootstrap demo</title>
+    <title>{% block title %}{% endblock %}Le blog de Cécilia </title>
+
+    {# La Description de la page #}
+    <meta name="description" content={% block description %}{% endblock %}>
+    {# Les mots clé #}
+    <meta name= "keywords" content={% block keywords %}{% endblock %}>
+{# author #}
+<meta name="author" content= "Cécilia Martial" >
+<meta name="publisher" content= "DWWM" >
+{# favicon #}
+<link rel="apple-touch-icon" sizes="180x180" href="{{asset('apple-touch-icon.png')}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon-32x32.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon-16x16.png')}}">
+<link rel="manifest" href="{{asset('site.webmanifest')}}">
+<link rel="mask-icon" href="{{asset('safari-pinned-tab.svg')}}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
     {# Google Fonts #}
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,13 +48,13 @@
           <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Qui suis je</a>
+          <a class="nav-link" href="">Qui suis je</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="{{path('visitor_blog_index')}}">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="{{path('visitor_contact_index')}}">Contact</a>
         </li>
        
       </ul>
