@@ -1,1 +1,13 @@
-coucou
+{% extends 'themes/base_admin_html.twig' %}
+
+{% block title %} Accueil
+    
+{% endblock %}
+
+{% block description %} Hello Admin
+    
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center display my-3" >hello {{app.user.firstName}}! </h1>
+{% endblock %}
